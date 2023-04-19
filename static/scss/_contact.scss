@@ -1,0 +1,54 @@
+.contact {
+  background-color: $color-grey-light;
+  min-height: 70vh;
+  padding: 6rem;
+  &_text {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  &_form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-secondary;
+    box-shadow: 1rem 2rem 2rem rgba(black, 0.1);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 80%;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      width: 90%;
+      padding: 1rem;
+    }
+
+    &_name,
+    &_email,
+    &_message {
+      display: block;
+      width: 80%;
+      border-radius: 3px;
+      padding: 1.5rem 2rem;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      border: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(black, 0.1);
+      }
+
+      &::-webkit-input-placeholder {
+        font-family: $font-primary;
+        color: $color-primary-light;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.story {
+  background-color: $color-grey-light;
+  height: 60vh;
+  @media only screen and (max-width: $bp-small) {
+    height: 80vh;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 6rem;
+  }
+}

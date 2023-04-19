@@ -1,0 +1,26 @@
+.footer {
+  padding: 3.5rem;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(#fff, 0.2), rgba(#fff, 0.2)),
+    url(../img/header.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.copyright {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: $font-display;
+  color: $color-secondary;
+  font-weight: 400;
+  font-size: 1.5rem;
+  background-image: linear-gradient(
+    to right,
+    rgba($color-primary-dark, 0.5),
+    rgba($color-primary, 0.5)
+  );
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 0.5rem;
+  }
+}

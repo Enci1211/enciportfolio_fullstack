@@ -1,0 +1,171 @@
+.header {
+  background-image: linear-gradient(to right, rgba(#fff, 0.2), rgba(#fff, 0.2)),
+    url(../img/header.jpg);
+  background-size: cover;
+  background-position: center;
+
+  height: 90vh;
+  padding: 6rem 15rem;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 6rem 8rem;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 6rem 4rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    height: 70vh;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_text {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    h2 {
+      border-bottom: 3px solid $color-secondary-light;
+      box-shadow: 3rem 1rem 2rem rgba($color-secondary, 0.3);
+    }
+    h1 {
+      @media only screen and (max-width: $bp-largest) {
+        font-size: 3rem;
+      }
+
+      @media only screen and (max-width: $bp-large) {
+        font-size: 2.5rem;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        font-size: 2rem;
+      }
+      font-size: 4rem;
+      font-weight: 500;
+      .hightlight {
+        color: $color-secondary-light;
+      }
+    }
+
+    &_item1 {
+      animation: moveInLeft 1s ease-in;
+    }
+    &_item2 {
+      animation: moveInRight 1s 1s ease-in;
+    }
+    &_item3 {
+      animation: moveInUp 0.5s 2s ease-in;
+    }
+    &_item4 {
+      animation: moveInUp 0.5s 2.5s ease-in;
+    }
+    &_item5 {
+      animation: moveInUp 1s 3s ease-in;
+    }
+  }
+
+  &_img {
+    width: fit-content;
+
+    img {
+      display: block;
+      height: calc(90vh - 6rem);
+      @media only screen and (max-width: $bp-large) {
+        height: 30rem;
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        height: 20rem;
+      }
+    }
+  }
+  &_link {
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 2rem;
+    }
+  }
+  &_icon {
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 2rem;
+    color: #fff;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+      margin: 0 1rem;
+    }
+  }
+  .btn {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-decoration: none;
+      color: $color-primary;
+      font-size: 2rem;
+      font-weight: 400;
+      padding: 1rem 4rem;
+      background-color: $color-secondary;
+      border-radius: 100px;
+      box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
+      transition: all 0.5s;
+      position: relative;
+      margin: 0 10px;
+      align-self: center;
+      @media only screen and (max-width: $bp-large) {
+        transform: scale(0.8);
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        transform: scale(0.5);
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        align-self: center;
+      }
+    }
+    &:hover,
+    &:active {
+      background-color: $color-secondary-light;
+      transform: translateY(-3px);
+
+      &::after {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: 100px;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      z-index: -1;
+
+      background-color: $color-secondary-light;
+      opacity: 1;
+      transition: all 0.5s;
+    }
+  }
+}

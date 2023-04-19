@@ -1,0 +1,150 @@
+.project {
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary, 0.8)
+    ),
+    url(../img/project.jpg);
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 6rem;
+    .row {
+      padding: 5rem 0;
+    }
+  }
+
+  &_item {
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    box-shadow: 0 3rem 6rem rgba(black, 0.1);
+    background-color: rgba(white, 0.5);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: 1.6rem;
+
+    transform: skewX(-12deg);
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 85%;
+      padding: 5rem;
+      transform: skewX(0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 4rem;
+    }
+
+    &_shape {
+      width: 15rem;
+      height: 15rem;
+
+      float: left;
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+
+      transform: translateX(-3rem) skewX(12deg);
+      position: relative;
+
+      @media only screen and (max-width: $bp-medium) {
+        transform: skewX(0);
+        margin-bottom: 3rem;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        display: none;
+      }
+    }
+
+    &_img {
+      height: 100%;
+      transform: translateX(-7rem) scale(1.4);
+      backface-visibility: hidden;
+      transition: all 0.5s;
+    }
+
+    &_img_2 {
+      transform: translateX(-7rem) scale(1.1);
+    }
+
+    &_img_3 {
+      transform: scale(1.1);
+    }
+
+    &_img_4 {
+      transform: scale(1);
+    }
+
+    &_img_5 {
+      transform: translateX(-9.5rem) scale(1);
+    }
+    &_text {
+      transform: skewX(12deg);
+
+      @media only screen and (max-width: $bp-medium) {
+        transform: skewX(0);
+      }
+    }
+
+    &_caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+
+      text-decoration: none;
+      color: $color-secondary;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.5s;
+      backface-visibility: hidden;
+    }
+
+    &_link {
+      /* ‘click me’ link不生效！！！目前将link放在标题上*/
+      text-decoration: none;
+      color: $color-secondary;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &:hover &_caption {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover &_img_1,
+    &:hover &_img_2 {
+      transform: translateX(-7rem) scale(1);
+      filter: blur(3px) brightness(50%);
+    }
+
+    &:hover &_img_3 {
+      transform: scale(0.8);
+      filter: blur(3px) brightness(50%);
+    }
+    &:hover &_img_4 {
+      transform: scale(1) translateX(-7rem);
+      filter: blur(3px) brightness(50%);
+    }
+
+    &:hover &_img_5 {
+      transform: scale(1.2) translateX(-8rem);
+      filter: blur(3px) brightness(50%);
+    }
+  }
+}
